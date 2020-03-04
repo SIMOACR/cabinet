@@ -1,3 +1,4 @@
+import { NavbarVisibilityService } from './../services/navbar-visibility.service';
 import { LoginComponent } from './../login/login.component';
 import { AuthService } from './../services/auth.service';
 import { Component, OnInit } from '@angular/core';
@@ -15,7 +16,8 @@ export class NavbarComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private dialog: MatDialog,
-    private router: Router
+    private router: Router,
+    public navbarVisibilityService: NavbarVisibilityService
     ) { }
 
   ngOnInit() {

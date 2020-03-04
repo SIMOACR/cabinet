@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavbarVisibilityService } from '../services/navbar-visibility.service';
 
 @Component({
   selector: 'app-myrdvs1',
@@ -10,10 +11,11 @@ export class Myrdvs1Component implements OnInit {
   patthname;
   interfaceName;
   isPatient;
-  constructor() {
+  constructor(public navbarVisibilityService: NavbarVisibilityService) {
   }
 
   ngOnInit() {
+    this.navbarVisibilityService.hide();
     this.interfaceName = this.constructor.name;
     this.isPatient = true;
     this.path();
