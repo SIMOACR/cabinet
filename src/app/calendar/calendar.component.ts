@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AddRdvComponent } from './../add-rdv/add-rdv.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Component, OnInit, AfterContentInit, Input } from '@angular/core';
@@ -33,6 +33,7 @@ import { UserServiceService } from '../services/user-service.service';
 })
 export class CalendarComponent implements OnInit {
   @Input() isPatient: boolean;
+  isMedcin: boolean;
   bla = [{}];
   public setDate: Date = new Date('2020, 01, 20');
   public scheduleViews: View[] = ['WorkWeek', 'Day', 'Month'];
@@ -47,13 +48,27 @@ export class CalendarComponent implements OnInit {
     private dialog: MatDialog,
     private rdvService: RdvService,
     private router: Router,
-    private userService: UserServiceService
+    private userService: UserServiceService,
+    private route: ActivatedRoute
     ) { }
 
   ngOnInit() {
+    this.isMedecinValue();
     this.getallrdvs();
     this.event();
     this.path();
+  }
+
+  isMedecinValue(){
+    this.route.paramMap.subscribe(
+      params => {
+        console.log("params");
+        console.log(params);
+        if (params.get('med') === 'med') {
+          this.isMedcin = true;
+        }
+      }
+    );
   }
 
   path() {

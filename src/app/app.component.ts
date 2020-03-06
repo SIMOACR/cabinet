@@ -6,14 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent  implements OnInit {
-  patthname: string;
-  title = 'cabinet';
 
-  ngOnInit() {
-    this.path();
-  }
+  ngOnInit() { }
 
-  path() {
-    this.patthname = window.location.pathname;
-  }
 }

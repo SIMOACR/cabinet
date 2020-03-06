@@ -27,34 +27,34 @@
       <!-- sidebar-header  -->
       <div class="sidebar-menu">
         <ul *ngIf="interfaceName=='Myrdvs1Component'">
-          <li *ngIf="patthname != '/patient'" class="sidebar">
-            <a (click)="call1()">
+          <li class="sidebar">
+            <a [routerLink]="['/patient']">
               <i class="far fa-calendar"></i>
               <span>Calendrier</span>
             </a>
           </li>
-          <li *ngIf="patthname != '/myrdvs'" class="sidebar">
-            <a [routerLink]="['/myrdvs']">
+          <li class="sidebar">
+            <a [routerLink]="['/patient/myrdvs']">
               <i class="fa fa-th-list"></i>
               <span>Mes rdvs</span>
             </a>
           </li>
-          <li *ngIf="patthname != '/myRdvHistory'" class="sidebar">
-            <a [routerLink]="['/myRdvHistory']">
+          <li class="sidebar">
+            <a [routerLink]="['/patient/myRdvHistory']">
               <i class="fas fa-history"></i>
               <span>Historique</span>
             </a>
           </li>
         </ul>
         <ul *ngIf="interfaceName=='MedecinComponent'">
-          <li *ngIf="patthname != '/medecin'" class="sidebar" (click)="call2()">
-            <a (click)="call2()">
+          <li class="sidebar" (click)="call2()">
+            <a [routerLink]="['/medecin/calendar/med']">
               <i class="far fa-calendar"></i>
               <span>Calendrier</span>
             </a>
           </li>
-          <li *ngIf="patthname != '/mypatients'" class="sidebar">
-            <a [routerLink]="['/mypatients']">
+          <li class="sidebar">
+            <a [routerLink]="['/medecin/mypatients']">
               <i class="fas fa-users"></i>
               <span>Mes patients</span>
             </a>

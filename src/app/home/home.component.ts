@@ -26,6 +26,10 @@ export class HomeComponent implements OnInit {
     console.log(window.location.pathname);
   }
 
+  ngOnDestroy(){
+    this.navbarVisibilityService.hide();
+  }
+
   openDialog(){
     this.dialog.open(TestComponent);
   }

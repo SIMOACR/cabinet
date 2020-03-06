@@ -4,10 +4,11 @@
       <app-profile [interfaceName]="interfaceName"></app-profile>
     </div>
     <div class="col-8">
-      <app-calendar *ngIf="patthname=='/patient'" [isPatient]="isPatient"></app-calendar>
+      <!-- <app-calendar *ngIf="patthname=='/patient'" [isPatient]="isPatient"></app-calendar>
       <app-myrdvs *ngIf="patthname=='/myrdvs'"></app-myrdvs>
       <app-rdv-history *ngIf="patthname=='/myRdvHistory'"></app-rdv-history>
-      <app-consultations *ngIf="patthname.startsWith('/consultations')"></app-consultations>
+      <app-consultations *ngIf="patthname.startsWith('/consultations')"></app-consultations> -->
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>

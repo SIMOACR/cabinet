@@ -15,7 +15,6 @@ export class Myrdvs1Component implements OnInit {
   }
 
   ngOnInit() {
-    this.navbarVisibilityService.hide();
     this.interfaceName = this.constructor.name;
     this.isPatient = true;
     this.path();

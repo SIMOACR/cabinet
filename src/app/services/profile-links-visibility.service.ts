@@ -8,12 +8,21 @@ export class ProfileLinksVisibilityService {
   myRdvsLinkVisibility: boolean;
   historyLinkVisibility: boolean;
   constructor() {
-    this.calendarLinkVisibility = true;
-    this.myRdvsLinkVisibility = true;
-    this.historyLinkVisibility = true;
+    this.calendarLinkVisibility = false;
+    this.myRdvsLinkVisibility = false;
+    this.historyLinkVisibility = false;
    }
 
-   show(linkVisibility: boolean) { linkVisibility = true; }
-   hide(linkVisibility: boolean) { linkVisibility = false; }
-   reverseVisibility(linkVisibility: boolean) { linkVisibility = !linkVisibility; }
+   showCalendar() { this.calendarLinkVisibility = true; }
+   hideCalendar() { this.calendarLinkVisibility = false; }
+   showMyrdvs() { this.myRdvsLinkVisibility = true; }
+   hideMyrdvs() { this.myRdvsLinkVisibility = false; }
+   showHistory() { this.historyLinkVisibility = true; }
+   hideHistory() { this.historyLinkVisibility = false; }
+   hideAll() { 
+     this.hideCalendar();
+     this.hideMyrdvs();
+     this.hideHistory(); 
+    }
+   
 }
