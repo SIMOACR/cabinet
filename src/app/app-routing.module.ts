@@ -26,15 +26,14 @@ const routes: Routes = [
   {path: 'addRdv', component: AddRdvComponent },
   {
     path: 'patient', 
-    loadChildren: () => import('./patients/patients.module').then(m => m.PatientsModule)
-    // component: Myrdvs1Component,
-    // children: [
-    //   {path: '', redirectTo: 'calendar', pathMatch: 'full' },
-    //   {path: 'calendar', component: CalendarComponent },
-    //   {path: 'myrdvs', component: MyrdvsComponent },
-    //   {path: 'myRdvHistory', component: RdvHistoryComponent },
-    //   {path: 'consultations/:rdvId', component: ConsultationsComponent },
-    // ]
+    component: Myrdvs1Component,
+    children: [
+      {path: '', redirectTo: 'calendar', pathMatch: 'full' },
+      {path: 'calendar', component: CalendarComponent },
+      {path: 'myrdvs', component: MyrdvsComponent },
+      {path: 'myRdvHistory', component: RdvHistoryComponent },
+      {path: 'consultations/:rdvId', component: ConsultationsComponent },
+    ]
   },
   {path: 'refresh', component: HomeComponent },
   {

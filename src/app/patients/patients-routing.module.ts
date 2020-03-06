@@ -22,7 +22,7 @@ const patientsRoutes: Routes = [
 ];
 
 @NgModule({
-  declarations: [Myrdvs1Component],
+  declarations: [],
   imports: [RouterModule.forChild(patientsRoutes)],
   exports: [RouterModule]
 })
